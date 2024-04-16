@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Florian Lalande</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">Project -</a> Dealing with missing values</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html" class="button">Home</a></li>
+							<li><a href="about_me.html" class="button">About me</a></li>
+							<li><a href="projects.html" class="button">Projects</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Numerical data imputation<br/>and its challenges</h2>
+						<p>And my solution: the kNNxKDE</p>
+					</header>
+					
+					<div class="box">
+						<span class="image featured"><img src="images/missing_piece_banner.jpg" alt="" /></span>
+						
+						<h3>Apparently, a simple problem</h3>
+						<p>
+							If most datasets on Kaggle are clean and nicely organized, real world datasets always
+							come with missing, erroneous, or corrupted values. However, most Machine Learning
+							algorithms cannot be applied using incomplete datasets. Therefore, we are left with
+							only one solution which is imputing (i.e. estimating) the missing values.
+							<br/>
+							For about 4 years, I have worked on this apparently simple problem: how to estimate
+							missing values in a numerical dataset? There exist many strategies, and most of
+							them aggregate individual predictions to lead to more robust imputed values. But this
+							strategy leads to a "mode-collapse" problem when several possible values are compatible
+							with the data distribution.
+							<img class="image" src="images/synth_data_all.jpg" alt="" width="70%" />
+						</p>
+							
+						<h3>The kNNxKDE</h3>
+						<p>
+							The method I proposed uses a continuous version of the k-NN (k nearest neighbors)
+							algorithm coupled with kernel density estimators (KDE). Hence its name, the kNNxKDE.
+							The idea is that for every missing value, the kNNxKDE returns a <u>probability
+							distribution</u> instead of a point estimate. This allows to quantify the uncertainty
+							for each value, and offers the possibility to sample, take the mean, the median, or any
+							other statistic for the final imputation value.
+							<br/>
+							<img class="image" src="images/synth_data_knnxkde.jpg" alt="" width="60%" />
+							<br/>
+							My algorithm has been published in TMLR with the Reproducibility Certification.
+							<br/>
+							→ Check it out
+							<a href="https://openreview.net/forum?id=KqR3rgooXb">here (OpenReview)</a>
+							<br/>
+							→ And the code is
+							<a href="https://github.com/DeltaFloflo/knnxkde">here (GitHub)</a>
+						</p>
+				</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/florian-lalande/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://scholar.google.com/citations?user=rZ_nO54AAAAJ&hl=en" class="icon solid fa-book"><span class="label">Google Scholar</span></a></li>
+					<li><a href="https://orcid.org/0000-0001-6676-1484" class="icon brands fa-orcid"><span class="label">ORCID</span></a></li>
+					<li><a href="https://github.com/DeltaFloflo" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Florian Lalande, 2024. All rights reserved.</li>
+				</ul>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
