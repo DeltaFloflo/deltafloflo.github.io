@@ -2489,6 +2489,12 @@
 				width: 100%;
 			}
 
+		.image.img-center {
+			display:block;
+			margin-left: auto;
+			margin-right: auto;
+		}	
+
 /* List */
 
 	ol {
@@ -3315,8 +3321,8 @@
 /* CTA */
 
 	#cta {
-		background: #e89980;
-		color: #f9e6df;
+		background: #b8b8b8;
+		color: #ffffff;
 		padding: 3.5em 0 4em 0;
 		text-align: center;
 	}
@@ -3337,7 +3343,7 @@
 		#cta .button {
 			box-shadow: none;
 			background: #fff;
-			color: #e89980;
+			color: #b6dae7;
 		}
 
 		#cta input[type="text"],
